@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h2>Biggest fish:</h2>
+        {% if fish_list %}
+            {% for fish in fish_list %}
+                <p>|Type: {{ fish.fish_type }} |
+                    | Weight: {{  fish.weight  }}|
+                    | Lure: {{  fish.lure  }}     |           
+                </p>
+            {% endfor %}        
+        {% endif %}
+{% endblock content %}
+

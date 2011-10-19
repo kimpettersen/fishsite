@@ -1,0 +1,75 @@
+@charset "utf-8"
+
+body, div, h1, h2, h3, p, ul, ol, li, img, header, section, aside, footer, button {
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
+        list-style: none;
+}
+
+a { 
+    text-decoration:none; color:#334433; }
+
+
+a:hover { 
+    color:#666644; 
+    }
+
+h1, h2, h3 { 
+    font-family: Georgia, Palatino, Palatino Linotype, Times, serif; 
+    }
+
+body { 
+    background-color: #eeddbb; 
+    font-family: Helvetica, Arial, sans-serif; 
+    font-size:12px;
+}
+
+/*Header*/
+
+header#site_head {
+    background-color:#666622;
+    -moz-box-shadow: inset 0px -2px 3px #666644;
+    -khtml-box-shadow: inset 0px -2px 3px #666644;
+    -webkit-box-shadow: inset 0px -2px 3px #666644;
+    height: 70px;
+    width:100%;
+    display:block;
+    }
+
+    .navigation {
+        margin: o auto;
+        padding-top: 40px;
+        padding-left:20px;
+        }
+    .navigation a{
+        font-size:20px;
+    }
+
+/*information area*/
+#error h2{
+    background-color:red;
+    font-family: Helvetica; 
+    color:white;
+}
+#info h2{
+    background-color:blue;
+    font-family: Helvetica; 
+    color:white;
+}
+
+/*main container*/
+
+#main_cont {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 15px;
+    min-height:550px;
+}
+
+.forms{
+    display:block;
+    width:350px;
+}
+
+

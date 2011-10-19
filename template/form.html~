@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="forms">
+<form action="/{{ action }}" method="post">{% csrf_token %}
+           {% csrf_token %}
+            {%  for field in formset %}
+                <div class="fieldWrapper">
+                    <div>{{ field.errors }}</div>
+                    <div>{{ field.label_tag }}: {{ field }}</div>
+                </div>
+            {% endfor %}    
+        <input type="submit" value="{{ value }}" >
+</form>
+</section>
+<div id="extra_info"></div>
+<div id="availability"></div>
+{% endblock content %}

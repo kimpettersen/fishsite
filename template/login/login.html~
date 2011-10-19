@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="forms">
+<form action="/login/login/" method="post">
+           {% csrf_token %}
+                    <p>
+                        <label for="u_name">username: </label>
+                        <input id="u_name" type="text" name="username" />
+                    </p>
+                    <p>
+                        <label for"p_word">password: </label>
+                        <input id="p_word"type="password" name="password" />
+                    </p>
+                    <p>
+                        <input type="submit" value="log in" />
+                    </p>
+            <input id="edit_button" type="submit" value="Login" >
+</form>
+</section>
+{% endblock content %}

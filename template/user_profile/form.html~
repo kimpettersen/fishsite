@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My overview</h2>
+<p>You can edit or add information about {{ object_name }}</p>
+<section class="forms">
+<form action="{{ action }}" method="post">
+           {% csrf_token %}
+            {{ formset.management_form }}
+                 {% for form in formset %}
+                       {{ form.as_ul }}
+                        <hr>
+                 {% endfor %}   
+            <input id="edit_button" type="submit" value="{{ object_name }}" >
+</form>
+</section>
+{% endblock content %}

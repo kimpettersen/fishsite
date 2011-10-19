@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block head %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}login/login.js"></script>
+{% endblock head %}
+{% block content %}
+    <section class="forms">
+        <form action="/login/register" method="post">
+            {% csrf_token %}
+            {%  for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field.label_tag }}: {{ field }}
+                </div>
+            {% endfor %}    
+        <input type="submit" value="Submit" >
+        </form>
+        <div id="availability">
+        </div>
+{% endblock content %}
+
