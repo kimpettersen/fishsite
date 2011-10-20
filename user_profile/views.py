@@ -16,19 +16,19 @@ def index(request):
 def edit_trips(request):
     #Method calls generate_form() with params for the 'Trip' objects
     return generate_edit_form(request,
-                Trip,
-                '/user_profile/edit_trips',
-                'Trips',
-                'Succesfully updated trips',
+                            Trip,
+                            '/user_profile/edit_trips',
+                            'Trips',
+                             'Succesfully updated trips',
                 )
     
 def edit_fish(request):
     #Method calls generate_form() with params for the 'Fish' objects
     return generate_edit_form(request,
-                Fish,
-                '/user_profile/edit_fish',
-                'Fish',
-                'Succesfully updated fish',
+                            Fish,
+                            '/user_profile/edit_fish',
+                            'Fish',
+                            'Succesfully updated fish',
                 )
 
 def generate_edit_form(request, current_object, 
@@ -51,12 +51,13 @@ def generate_edit_form(request, current_object,
             info_string = 'The form did not validate. Please try again'
     else:
         formset = CurrentFormSet()
+    
     #Data to be rendered. Contains a formset, the action the form will perform
     #the name of the object and an info string that contains problems occured.
     data = {'formset' : formset,
             'action' : form_action,
             'object_name' : object_name,
-            'info' : info_string
+            'info' : info_string,
             }
     return render(request, 'user_profile/form.html', data)
 
@@ -64,4 +65,4 @@ def profile(request):
     #Returns a list of the 5 heaviest fish in the db. renders a 'User profile'
     fish_list = Fish.objects.all().order_by('-weight')[:5]
     return render(request, 'user_profile/profile.html', 
-                    {'fish_list': fish_list})
+                  {'fish_list': fish_list})

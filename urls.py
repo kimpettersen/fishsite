@@ -17,7 +17,7 @@ urlpatterns += patterns('',
     (r'^login/loginform', 'login.views.show_login_form'),
     (r'^login/login', 'login.views.log_in'),
     (r'^login/checkusername/(?P<username>\w+)/$', 
-        'login.views.check_username_availability'),
+            'login.views.check_username_availability'),
     )
 
 #remove before deploying
