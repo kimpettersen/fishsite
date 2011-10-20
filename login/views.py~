@@ -53,7 +53,7 @@ def log_in(request):
     #login.show_login_form if failure 
     
     #Tries to get username and password from POST.
-    #returns in silence to login.    
+    #returns in silence to the login window
     try:
         username = request.POST['username']
         password = request.POST['password']

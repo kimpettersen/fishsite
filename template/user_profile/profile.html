@@ -6,10 +6,10 @@
         {% else %}
             {% for fish in fish_list %}
                 <p>|Type: {{ fish.fish_type }} |
-                    | Weight: {{  fish.weight  }}|
-                    | Lure: {{  fish.lure  }}     |           
+                    | Weight: {{ fish.weight }}|
+                    | Lure: {{ fish.lure }} |
                 </p>
-            {% endfor %}        
+            {% endfor %}
         {% endif %}
 {% endblock content %}
 

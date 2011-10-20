@@ -6,11 +6,14 @@
 <form action="{{ action }}" method="post">
            {% csrf_token %}
             {{ formset.management_form }}
-                 {% for form in formset %}
-                       {{ form.as_ul }}
+                {% for form in formset %}
+{# Manuel HTML so the empty fields can be selected and hidden by default. #} 
+{# Create button and field to select amount of new formsand to show them. #}
+                
+                    {{ form.as_ul }}
                         <hr>
                  {% endfor %}   
-            <input id="edit_button" type="submit" value="{{ object_name }}" >
+            <input id="edit_button" type="submit" value="Save changes" >
 </form>
 </section>
 {% endblock content %}

@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 #TODO-Set up cache for the password checker. 
 
 def register(request):
-    #Uses django's default UserCreationForm form. Renders 'user_profile.index' 
+    #Uses django's default UserCreationForm form. Renders 'user_profile.index'
     #with success message if registration went OK.
     #If form is not validated or something is missing will it display an error
     #Message 
@@ -32,12 +32,12 @@ def check_username_availability(request, username):
     #key: 'user_exists'. Returns True if user exists 
     message = {}
     try:
-        #Looking for a user with the given username. This will happen very 
+        #Looking for a user with the given username. This will happen very
         #often.
         user = User.objects.get(username__exact=username)
         message = {'user_exists' : True}
     except:
-        #Raises an MultiDictValue exception if user does not exist. 
+        #Raises an MultiDictValue exception if user does not exist.
         #i.e the username is available.
         message = {'user_exists' : False}
     json = simplejson.dumps(message)
@@ -49,8 +49,8 @@ def show_login_form(request):
 
 def log_in(request):
     # Loggs a user in if the user is authenticated, exists and is active.
-    #Redirects to user_profile.profile on success. 
-    #login.show_login_form if failure 
+    #Redirects to user_profile.profile on success.
+    #login.show_login_form if failure
     
     #Tries to get username and password from POST.
     #returns in silence to the login window

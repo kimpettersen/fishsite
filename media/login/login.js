@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#id_username').keyup(function() {
-        //Get username when user types. This creates a lot of db activity        
+        //Get username when user types. This creates a lot of db activity
         var uname = document. getElementById('id_username').value;
         //parse the string to JSON
         var obj = jQuery.parseJSON('{"username":"'+ uname +'"}');
@@ -15,7 +15,7 @@ $(document).ready(function() {
                     }
                      else{
                     $('#availability').empty().append('Username is available')
-                    }                
+                    }
                 }
             });    
         }

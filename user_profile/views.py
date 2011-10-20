@@ -15,7 +15,7 @@ def index(request):
     
 def edit_trips(request):
     #Method calls generate_form() with params for the 'Trip' objects
-    return generate_form(request,
+    return generate_edit_form(request,
                 Trip,
                 '/user_profile/edit_trips',
                 'Trips',
@@ -24,20 +24,22 @@ def edit_trips(request):
     
 def edit_fish(request):
     #Method calls generate_form() with params for the 'Fish' objects
-    return generate_form(request,
+    return generate_edit_form(request,
                 Fish,
                 '/user_profile/edit_fish',
                 'Fish',
                 'Succesfully updated fish',
                 )
 
-def generate_form(request, current_object, form_action, object_name, success_message):
+def generate_edit_form(request, current_object, 
+                        form_action, object_name, success_message):
     #Method creates a form from the passed object.
     #The method returns all forms that is saved pluss one extra blank form.
     #Uses 'form.html' to display content
     #TODO -Make the amount of extra forms dynamic. This gives the oportunity to
     #add as many new objects as decired.
-    #-Add the logged in user to the created object.
+    #IMPORTANT Empty form submit validates. Gives the oportunity to just update
+    #a form. Needs to be errorhandled in Javascript
     CurrentFormSet = modelformset_factory(current_object, extra=1)
     info_string = ''
     if request.method == 'POST':
@@ -54,7 +56,7 @@ def generate_form(request, current_object, form_action, object_name, success_mes
     data = {'formset' : formset,
             'action' : form_action,
             'object_name' : object_name,
-            'info' : info_string            
+            'info' : info_string
             }
     return render(request, 'user_profile/form.html', data)
 
