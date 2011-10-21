@@ -1,9 +1,0 @@
-from django import forms
-
-class TripForm(forms.Form):
-    destination = forms.CharField(max_length=150, required=True)
-    start_time = forms.DateField(label="Start time(mm/dd/yyyy)", required=True)
-    end_time = forms.DateField(label="End time(mm/dd/yyyy)", required=True)
-    water = forms.CharField(max_length=150, required=True)
-    comment = forms.CharField(max_length=400, required=True)
-

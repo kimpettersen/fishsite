@@ -23,7 +23,7 @@ urlpatterns += patterns('',
 #remove before deploying
 urlpatterns += patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': '/home/kim/fishsite/media/'}),
+            {'document_root': '/Users/Kim/fishsite/media/'}),
     )
 
 
