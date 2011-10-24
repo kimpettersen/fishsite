@@ -1,19 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>My overview</h2>
-<p>You can edit or add information about {{ object_name }}</p>
+<p>You can add information about {{ form_name }}</p>
 <section class="forms">
 <form action="{{ action }}" method="post">
            {% csrf_token %}
-            {{ formset.management_form }}
-                {% for form in formset %}
-{# Manuel HTML so the empty fields can be selected and hidden by default. #} 
-{# Create button and field to select amount of new formsand to show them. #}
-                
-                    {{ form.as_ul }}
-                        <hr>
-                 {% endfor %}
-            <input id="edit_button" type="submit" value="Save changes" >
+            {{ form.as_ul }}
+            <hr>
+            <input id="edit_button" type="submit" value="Save" >
 </form>
 </section>
 {% endblock content %}

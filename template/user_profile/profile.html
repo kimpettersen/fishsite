@@ -1,15 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-        <h2>Biggest fish:</h2>
-        {% if not fish_list %}
-            <p>there are no fish</p>
+        <h2>My trips:</h2>
+        {# Display all the trips for the logged in user #}
+        {% if not my_trips %}
+            <p>No trips</p>
         {% else %}
-            {% for fish in fish_list %}
-                <p>|Type: {{ fish.fish_type }} |
-                    | Weight: {{ fish.weight }}|
-                    | Lure: {{ fish.lure }} |
-                </p>
+            <ul>
+            {% for trip in my_trips %}
+            <li>Destination: {{ trip.destination }}</li>
+            <li>Started: {{ trip.start_time }}</li>
+            <li>Ended: {{ trip.end_time }}</li>
+            <li>Water type: {{ trip.water_type }}</li>
+            <li>Comment: {{ trip.comment }}</li>
+            <hr>
             {% endfor %}
+            </ul>
+            {% endif %}
+            
+            <h2>My Fish:</h2>
+            {# Display all the fish for the logged in user #}
+            {% if not my_fish %}
+                <p>No fish</p>
+            {% else %}
+                <ul>
+                {# my_fish is a list of trips, each trip has its own list of fish #}
+                {% for trips in my_fish %}
+                {% for fish in trips %}
+                <li>Trip: {{ fish.trip }}</li>
+                <li>Fish type: {{ fish.fish_type }}</li>
+                <li>Weight: {{ fish.weight }}</li>
+                <li>Length: {{ fish.length }}</li>
+                <li>Lure: {{ fish.lure }}</li>
+                <li>Comment: {{ fish.comment }}</li>
+                <hr>
+                {% endfor %}                
+                {% endfor %}
+                </ul>
         {% endif %}
 {% endblock content %}
 
