@@ -1,0 +1,22 @@
+To Install on localhost:
+Set up absolute path to media directory in urls.py Example: ~/fishsite/media
+
+About:
+This system is not done yet. I just started developing it because it is a good way to understand things. The system is in a
+very early stage and my plans will probably change a lot.
+
+What works?
+-User registration
+-Login
+-Create trip
+-Create fish to that trip
+-See a list over your trips and fish(Called profile)
+-log out
+
+
+What is going to work later?
+-Smarter models. Example: the possibility to create "water" which can be a river, lake, creek etc.
+-Gather data from different models to show which lure that fishes best in what water, when to fish where etc..
+-The possibiity to "follow" a water or users. Add comments to fish/trips
+-Show statistics and send notifications.
+- ...
