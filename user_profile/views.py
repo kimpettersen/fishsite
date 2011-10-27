@@ -48,8 +48,6 @@ def add_trips(request):
     
 @login_required    
 def add_fish(request):
-    #Creates a form from models.FishForm
-    form = FishForm()
     info_string = ''
     if request.method == 'POST':
         #User submitted a form, create one out of the request
