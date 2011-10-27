@@ -20,8 +20,6 @@ def index(request):
 
 @login_required
 def add_trips(request):
-    #Creates a form from models.TripForm
-    form = TripForm()
     info_string = ''
     if request.method == 'POST':
         #User submitted a form, create one out of the request
